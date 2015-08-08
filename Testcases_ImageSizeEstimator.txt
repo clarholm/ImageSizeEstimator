@@ -1,3 +1,5 @@
+Copy and paste user input for each test case into the program to run them.
+
 Test 1, Test according to exemple printout, normal case
 J 2048 1024 
 JPG 5000 3000 
@@ -59,3 +61,6 @@ Q
 Test 7, verify that the largest integers still produce a size.
 BMP 2147483647 2147483647
 Q
+
+Test 8, Verify that program exits on EXIT
+EXIT
