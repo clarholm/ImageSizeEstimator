@@ -1,0 +1,61 @@
+Test 1, Test according to exemple printout, normal case
+J 2048 1024 
+JPG 5000 3000 
+G 1 2 
+JP2 1000 2000 
+BMP 2000 1000
+Q
+
+Test 2, Normal Case higher complexity.
+J 4003 3243
+BMP 333333 44444
+BMP 333333 44444
+J 40000 40000
+G 1 2 3
+J 40000 4000
+BMP 50000 5000
+JPEG2000 6000 6000
+G 7 6
+BMP 4000 4000
+JPG 6000 555
+G 10 11
+JPG 6000 555
+Q
+
+Test 3, Image a part of multiple groups. triggers error.
+
+J 4003 3243
+BMP 333333 44444
+BMP 333333 44444
+J 40000 40000
+G 1 2 3
+J 40000 4000
+BMP 50000 5000
+JP2 6000 6000
+G 4 6 2
+BMP 4000 4000
+JPG 6000 555
+G 7 6
+Q
+
+Test 4, Negative input for image dimensions, triggers error.
+J 4003 -3243
+Q
+
+Test 5, Input set to 0 for image dimension, triggers error.
+JP2 0 3243
+Q
+
+Test 6, Image group contains non defined images, triggers error.
+J 1000 1000
+BMP 1000 1000
+G 1 4
+Q
+
+Test 7, Image dimensions larger then typ int can hold (2 147 483 647), triggers error.
+J 2147483648 1000
+Q
+
+Test 7, verify that the largest integers still produce a size.
+BMP 2147483647 2147483647
+Q
